@@ -1,9 +1,24 @@
 import java.util.List;
 
-public class User {
+public abstract class User {
 
     private String _name;
     private String _membership = "BRONZE";
+
+    boolean _verified = false;
+
+    void set_verified(boolean verified) {
+        _verified = verified;
+    }
+
+    boolean get_verified() {
+        return _verified;
+    }
+
+    void verify() {
+        System.out.println("Veryfing...");
+        set_verified(true);
+    }
 
     public static List<User> admins;
 

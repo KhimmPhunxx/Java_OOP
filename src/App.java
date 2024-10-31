@@ -1,20 +1,20 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class App {
     public static void main(String[] args) {
 
-        // User.admins = new ArrayList<User>();
-        // User.admins.add(new User("John"));
-        // User.admins.add(new User("Callen"));
-        // User.admins.add(new User("Alice"));
-        // User.print_admins_name();
-
         Student s = new Student();
-        System.out.println(s.get_verified());
-        s.set_membership("GOLD");
-        System.out.println(s.get_membership());
+        s.set_name("Stident");
+        Teacher t = new Teacher();
+        t.set_name("Teacher");
 
-
+        User.admins = new ArrayList<User>();
+        User.admins.add(s);
+        User.admins.add(t);
+        
+       
+        for (User u : User.admins) {
+            u.verify();
+        }
     }
 }
